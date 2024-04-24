@@ -1,0 +1,28 @@
+ion-title {
+    color: #ffe5b4;
+}
+
+ion-checkbox::part(label) {
+    color: navy;
+    font-weight: bold;
+}
+
+ion-checkbox::part(container) {
+    border-radius: 50%;
+    border: 2px solid navy;
+    height: 20px;
+    width: 20px;
+    background-color: #ffe5b4;
+    --checkmark-color: navy;
+}
+    
+
+ion-footer {
+    height: 30px;
+    width: 100%;
+    background-color: navy;
+}
+
+ion-icon {
+    height: 30px;
+}

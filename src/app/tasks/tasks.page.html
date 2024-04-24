@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Tasks</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,12 +13,12 @@
 
   <ion-accordion-group >
     <ion-accordion value="Incomplete" >
-      <ion-item slot="header" >
+      <ion-item slot="header" color="tertiary">
         <ion-label>Incomplete</ion-label>
       </ion-item>
       <ion-list slot="content">
         <ion-item-sliding *ngFor="let task of taskList">
-          <ion-item *ngIf="!task.completed">
+          <ion-item *ngIf="!task.completed" color="secondary">
             <ion-checkbox labelPlacement="start" [(ngModel)]="task.completed" (click)="updateTask(task)">{{task.title}}</ion-checkbox>
           </ion-item>
           <ion-item-options>
@@ -30,13 +30,13 @@
       </ion-list>
     </ion-accordion>
     <ion-accordion value="complete">
-      <ion-item slot="header">
+      <ion-item slot="header" color="tertiary">
         <ion-label>Complete</ion-label>
       </ion-item>
       <ion-list slot="content">
         <ion-item-sliding *ngFor="let task of taskList">
-          <ion-item *ngIf="task.completed">
-            <ion-checkbox labelPlacement="start" [(ngModel)]="task.completed" (click)="updateTask(task)">{{task.title}}</ion-checkbox>
+          <ion-item *ngIf="task.completed" color="secondary" class="task">
+            <ion-checkbox class="task" color="tertiary" labelPlacement="start" [(ngModel)]="task.completed" (click)="updateTask(task)">{{task.title}}</ion-checkbox>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="danger" (click)="deleteTask(task.id)">
@@ -48,7 +48,7 @@
     </ion-accordion>
   </ion-accordion-group>
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button (click)='prompt()'>
+    <ion-fab-button (click)='prompt()' color="tertiary">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -56,9 +56,9 @@
 
 <ion-footer>
   <a href="https://github.com/rdorrell1997" target="_blank">
-    <ion-icon name="logo-github"></ion-icon>
+    <ion-icon name="logo-github" color="secondary" class="ion-margin-horizontal icon-small"></ion-icon>
   </a>
   <a href="https://www.linkedin.com/in/ryan-dorrell/" target="_blank">
-    <ion-icon name="logo-linkedin"></ion-icon>
+    <ion-icon name="logo-linkedin" color="secondary" class="icon-small"></ion-icon>
   </a>
 </ion-footer>
