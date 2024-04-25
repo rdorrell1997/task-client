@@ -4,21 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" color="secondary">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Tasks</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-accordion-group >
-    <ion-accordion value="Incomplete" >
+  <ion-accordion-group>
+    <ion-accordion value="Incomplete">
       <ion-item slot="header" color="tertiary">
-        <ion-label>Incomplete</ion-label>
+        <ion-label class="label">Incomplete</ion-label>
       </ion-item>
       <ion-list slot="content">
         <ion-item-sliding *ngFor="let task of taskList">
-          <ion-item *ngIf="!task.completed" color="secondary">
+          <ion-item *ngIf="!task.completed" color="tertiary">
             <ion-checkbox labelPlacement="start" [(ngModel)]="task.completed" (click)="updateTask(task)">{{task.title}}</ion-checkbox>
           </ion-item>
           <ion-item-options>
@@ -31,11 +31,11 @@
     </ion-accordion>
     <ion-accordion value="complete">
       <ion-item slot="header" color="tertiary">
-        <ion-label>Complete</ion-label>
+        <ion-label class="label">Complete</ion-label>
       </ion-item>
       <ion-list slot="content">
         <ion-item-sliding *ngFor="let task of taskList">
-          <ion-item *ngIf="task.completed" color="secondary" class="task">
+          <ion-item *ngIf="task.completed" color="tertiary">
             <ion-checkbox class="task" color="tertiary" labelPlacement="start" [(ngModel)]="task.completed" (click)="updateTask(task)">{{task.title}}</ion-checkbox>
           </ion-item>
           <ion-item-options>

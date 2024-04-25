@@ -2,6 +2,11 @@ ion-title {
     color: #ffe5b4;
 }
 
+.label {
+    color: navy;
+    font-weight: bold;
+}
+
 ion-checkbox::part(label) {
     color: navy;
     font-weight: bold;
