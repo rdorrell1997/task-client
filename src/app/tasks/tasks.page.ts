@@ -32,6 +32,8 @@ export class TasksPage implements OnInit {
     this.newTask.completed = false;
     this.taskService.createTask(this.newTask).subscribe(() => {
       this.getTasks(); 
+    }, error => {
+      this.dialogService.showAlert('Error: ', 'Error has occured with submitted task; please resubmit.');
     });
   }
   
